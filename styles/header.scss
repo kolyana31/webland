@@ -1,0 +1,133 @@
+.header {
+  position: relative;
+  height: 100vh;
+  max-height: 660px;
+
+  background-image: url("../assets/img/headerBG.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  &_menu {
+    padding-top: 32px;
+    margin-left: 12.4%;
+    margin-right: 11%;
+  }
+
+  &_text {
+    position: absolute;
+    top: 27.9%;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 400px;
+    font-family: "StolzlLight";
+    font-size: 37.5px;
+    font-weight: 300;
+    text-align: center;
+    color: #555c6f;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    font-family: "StolzlThin";
+    font-size: 20px;
+    font-weight: 100;
+    color: #555c6f;
+
+    &:first-child {
+      margin-right: auto;
+      font-family: "StolzlThin";
+      font-size: 25px;
+      font-weight: 100;
+      color: #555c6f;
+    }
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .header {
+
+    background-size: cover;
+    background-position: center;
+
+    &_links {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      min-width: 100%;
+      top: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+
+      .hidden_menu{
+        transform: translateX(-100%);
+      }
+
+      li{
+        transition: 0.5s ease-in-out;
+        display: block;
+        font-size: 20px;
+        margin: 0;
+
+        &:first-child{
+            font-size: 20px;
+            margin: 0;
+        }
+        &:not(:first-child) {
+            margin-left: 0;
+          }
+      }
+    }
+
+    ul {
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    &_menuBTN {
+      position: relative;
+      width: 30px;
+      height: 30px;
+
+      .center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 30px;
+      }
+
+      .center:before,
+      .center:after,
+      .center div {
+        background: black;
+        content: "";
+        display: block;
+        height: 3.333px;
+        border-radius: 2px;
+        margin: 5px 0;
+        transition: 0.5s;
+      }
+      .center_active:before {
+        transform: translateY(8.3px) rotate(135deg);
+      }
+      .center_active:after {
+        transform: translateY(-8.3px) rotate(-135deg);
+      }
+      .center_active div {
+        transform: scale(0);
+      }
+    }
+  }
+}

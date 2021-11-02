@@ -1,0 +1,55 @@
+.about{
+    display: flex;
+
+    &_left{
+        display: block;
+        min-width: 50%;
+        min-height: 100%;
+        background-image: url("../assets/img/about.jpg");
+        background-size: cover;
+    }
+    &_right{
+        position: relative;
+        display: block;
+        height: 100%;
+        width: 50%;
+        background-color: #e5e5e5;
+    }
+
+    &_header{
+        margin-left: 12.9%;
+        margin-top: calc(93% * 100% / 660%);
+        margin-bottom: calc(62% * 100% / 660%);
+        font-family: "StolzlBook";
+        font-size: 37px;
+
+        color: #101334;
+    }
+
+    &_text{
+        max-width: 401px;
+        margin-bottom: calc(159% * 100% / 660%);
+        margin-left: 6.8%;
+        font-family: "StolzlLight";
+        font-size: 20px;
+        font-weight: 300;
+        color: #555c6f;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .about{
+        &_left{
+            display: none;
+        }
+        &_right{
+            width: 100%;
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/img/about.jpg');
+            background-size: cover;
+        }
+
+        &_header,&_text{
+            color: #f4feff;
+        }
+    }
+}

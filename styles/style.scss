@@ -1,0 +1,37 @@
+@import "./fonts.scss";
+@import "./header.scss";
+@import "./about.scss";
+@import "./services.scss";
+@import "./prices.scss";
+@import "./contact.scss";
+@import "./dotsscrol.scss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.showupper{
+    opacity: 0;
+    animation: showup;
+    animation-delay: 0.2s;
+    animation-duration: 0.5s;
+    animation-play-state: paused;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showup{
+    0%{
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
